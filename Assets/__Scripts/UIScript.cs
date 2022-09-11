@@ -24,7 +24,6 @@ public class UIScript : MonoBehaviour {
 
         //if scene 1 or 2 is active the bottom text will be updated to say level 1 and that the player needs to collect 200 points to advance to the next level
         if (this.gameObject.scene.name == "_Scene_1" || this.gameObject.scene.name == "_Scene_2") {
-
             //sets the levelText to Level: 1, and sets the bottomText to Collect 200 points to advance to the next level
             levelText.text = "Level: 1";
             bottomText.text = "Collect 200 points to advance to the next level";
@@ -51,8 +50,7 @@ public class UIScript : MonoBehaviour {
         //if the player's health is above 0 it displays their health, otherwise it displays 0 that way there is no negatives
         if (ParentPlayer.health > 0) {
             healthText.text = "HP: " + ParentPlayer.health + "/" + ParentPlayer.maxHealth;
-        }
-        else {
+        } else {
             healthText.text = "HP: 0/" + ParentPlayer.maxHealth;
         }
 

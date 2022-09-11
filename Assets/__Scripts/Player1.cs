@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player1 : ParentPlayer {
-
     // Awake is called when the script instance is being loaded
     void Awake() {
-
         //initializes player health depending on the scene
         if (this.gameObject.scene.name == "_Scene_1" || this.gameObject.scene.name == "_Scene_2") {
             playerHealth = 100;
             maxHealth = 100;
-        }
-        else {
+        } else {
             playerHealth = 150;
             maxHealth = 150;
         }

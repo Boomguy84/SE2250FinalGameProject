@@ -40,8 +40,7 @@ public class ParentPlayer : MonoBehaviour {
         //if the player is moving the animator triggers the walking animation
         if (horizontal != 0 || vertical != 0) {
             animator.SetFloat("Speed", 1);
-        }
-        else {
+        } else {
             animator.SetFloat("Speed", 0);
         }
 
@@ -77,8 +76,7 @@ public class ParentPlayer : MonoBehaviour {
         //if the player chose Gun as their ranged ability it will shoot, and if the player chose a bomb as their ability it will throw a bomb
         if (PlayerPrefs.GetString("Ranged") == "Gun") {
             Fire(left, projectilePrefab);
-        }
-        else if (PlayerPrefs.GetString("Ranged") == "Bomb") {
+        } else if (PlayerPrefs.GetString("Ranged") == "Bomb") {
             Fire(left, throwableProjectilePrefab);
         }
     }
@@ -88,8 +86,7 @@ public class ParentPlayer : MonoBehaviour {
         //if the player chose slash as their melee ability it will do a slash, and if the player chose a stab as their ability it will stab
         if (PlayerPrefs.GetString("Attack") == "Slash") {
             Attack();
-        }
-        else if (PlayerPrefs.GetString("Attack") == "Stab") {
+        } else if (PlayerPrefs.GetString("Attack") == "Stab") {
             Stab(left);
         }
     }
@@ -105,8 +102,7 @@ public class ParentPlayer : MonoBehaviour {
         //depending on which way the player is facing fires the ranged ability
         if (!left) {
             rigidB.velocity = Vector3.right * projectileSpeed;
-        }
-        else {
+        } else {
             rigidB.velocity = Vector3.left * projectileSpeed;
         }
     }
@@ -122,8 +118,7 @@ public class ParentPlayer : MonoBehaviour {
         if (!left) {
             stabGO.transform.position = stabGO.transform.position + new Vector3(1, 0);
             stabGO.transform.rotation = new Quaternion(0f, 0f, 1f, 0.7071068f);
-        }
-        else {
+        } else {
             stabGO.transform.position = stabGO.transform.position + new Vector3(-1, 0);
             stabGO.transform.rotation = new Quaternion(0f, 0f, -1f, 0.7071068f);
         }
